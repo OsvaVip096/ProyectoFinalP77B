@@ -27,5 +27,7 @@
             android:text="Pausar"
             android:id="@+id/btnPausa"
             />
-
+    </LinearLayout>
 </LinearLayout>
+
+    
