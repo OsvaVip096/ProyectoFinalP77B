@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actualizar">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Título"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/txtTituloA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/txtDescripcionA"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:inputType="textMultiLine"
+                android:textAlignment="center" />
+
+            <RadioGroup
+                android:id="@+id/rdgTipoA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rdTareaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rdTarea" />
+
+                <RadioButton
+                    android:id="@+id/rdNotaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="rdNota" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/lnrRecordatoriaA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnAgregarAlarmaA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="setTerminar"
+                    android:text="Terminación" />
+
+                <TextView
+                    android:id="@+id/lblRecordatorioA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="addRecordatorio"
+                    android:text="Agregar recordatorio" />
+
+                <Button
+                    android:id="@+id/btnVerRecordatoriosAA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="btnVerRecordatoriosAA"
+                    android:text="Ver recordatorios"
+
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Archivos"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnArchivos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btnArchivosAOnClick"
+                android:text="Archivos" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcclcArchivoListaA"
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/btnGuardarA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btnGuardarAOnClick"
+                android:text="Guardar" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
