@@ -80,6 +80,9 @@ public class DataBaseProject extends SQLiteOpenHelper {
                            @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, "DBFile", null, 1);
     }
+    public DataBaseProject(@Nullable Context context){
+        super(context,"BDFile",null,1);
+    }
 
     /**
      * Creación de las tablas de la BD.
