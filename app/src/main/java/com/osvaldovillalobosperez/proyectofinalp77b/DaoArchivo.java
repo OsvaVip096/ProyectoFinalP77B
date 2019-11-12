@@ -38,4 +38,10 @@ public class DaoArchivo  extends AppCompatActivity {
         }
     }
 
+
+    public int delete(String id){
+        return bd.delete(DataBaseProject.TABLE_NAME_ARCHIVOS,"_idArchivo=?",new String[]{id});
+    }
+
+
 }
