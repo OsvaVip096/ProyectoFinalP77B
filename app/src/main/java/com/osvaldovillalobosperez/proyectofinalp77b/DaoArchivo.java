@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class DaoArchivo  extends AppCompatActivity {
     private SQLiteDatabase bd;
 
@@ -21,6 +23,19 @@ public class DaoArchivo  extends AppCompatActivity {
         cnt.put(DataBaseProject.COLUMNS_ARCHIVOS[4],archivo.getTitulo());
         return  bd.insert(DataBaseProject.TABLE_NAME_ARCHIVOS,null,cnt);
         //pañaleros
+    }
+    public boolean insertarVariosArchivos(ArrayList<Archivo> lista){
+        int cont=0;
+        for(Archivo ar :lista){
+            if(this.insertarArchivo(ar)>0){
+                cont++;
+            }
+        }
+        if(cont==lista.size()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }
