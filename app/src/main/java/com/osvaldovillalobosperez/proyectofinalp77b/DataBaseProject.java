@@ -72,12 +72,8 @@ public class DataBaseProject extends SQLiteOpenHelper {
      * Constructor default de la Base de Datos del proyecto.
      *
      * @param context Indica el contexto.
-     * @param name    Indica el nombre de la DB.
-     * @param factory Indica un Cursor.
-     * @param version Versión de la BD.
      */
-    public DataBaseProject(@Nullable Context context, @Nullable String name,
-                           @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+    public DataBaseProject(@Nullable Context context) {
         super(context, "DBFile", null, 1);
     }
     public DataBaseProject(@Nullable Context context){
