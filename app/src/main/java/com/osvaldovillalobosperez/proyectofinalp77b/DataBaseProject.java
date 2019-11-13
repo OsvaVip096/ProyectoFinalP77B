@@ -76,9 +76,6 @@ public class DataBaseProject extends SQLiteOpenHelper {
     public DataBaseProject(@Nullable Context context) {
         super(context, "DBFile", null, 1);
     }
-    public DataBaseProject(@Nullable Context context){
-        super(context,"BDFile",null,1);
-    }
 
     /**
      * Creación de las tablas de la BD.
