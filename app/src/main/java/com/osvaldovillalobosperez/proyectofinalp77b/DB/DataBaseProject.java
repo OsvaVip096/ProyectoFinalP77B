@@ -1,4 +1,4 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DB;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

@@ -18,13 +18,13 @@
 
             <EditText
                 android:id="@+id/txtBuscar"
-                android:layout_width="240dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:hint="Buscar" />
 
             <Button
                 android:id="@+id/btnBuscar"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnBuscar"
                 android:text="Buscar" />

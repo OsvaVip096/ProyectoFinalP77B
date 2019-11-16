@@ -1,10 +1,13 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
+import com.osvaldovillalobosperez.proyectofinalp77b.Nota;
 
 import java.util.ArrayList;
 import java.util.List;

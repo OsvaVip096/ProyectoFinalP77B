@@ -1,12 +1,15 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-public class DaoNotas {
+import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
+import com.osvaldovillalobosperez.proyectofinalp77b.Nota;
+
+public class DAONotas {
     private SQLiteDatabase db;
-    public DaoNotas(Context context){
+    public DAONotas(Context context){
         this.db = new DataBaseProject(context).getWritableDatabase();
     }
 

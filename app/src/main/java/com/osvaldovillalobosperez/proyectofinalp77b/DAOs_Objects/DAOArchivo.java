@@ -1,4 +1,4 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,12 +6,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.osvaldovillalobosperez.proyectofinalp77b.Archivo;
+import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
+
 import java.util.ArrayList;
 
-public class DaoArchivo extends AppCompatActivity {
+public class DAOArchivo extends AppCompatActivity {
     private SQLiteDatabase bd;
 
-    public DaoArchivo(Context context) {
+    public DAOArchivo(Context context) {
         this.bd = new DataBaseProject(context).getWritableDatabase();
     }
 
