@@ -4,7 +4,7 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!--tools:context=".Agregar"-->
+    <!--tools:context=".com.osvaldovillalobosperez.proyectofinalp77b.Actualizar.Agregar"-->
 
     <ScrollView
         android:layout_width="match_parent"

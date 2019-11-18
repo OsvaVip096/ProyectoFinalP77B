@@ -74,4 +74,8 @@ public class Recordatorio {
         this.minuto = minuto;
         this.tituloFicha = tituloFicha;
     }
+
+    public Recordatorio() {
+
+    }
 }
