@@ -14,83 +14,78 @@ import java.util.List;
 public class DAONota {
     SQLiteDatabase _sqlSqLiteDatabase;
 
-    public DAONota(Context ctx) {
-        DataBaseProject miDB = new DataBaseProject(ctx);
-        _sqlSqLiteDatabase = miDB.getWritableDatabase();
+    public DAONota(Context context) {
+        this._sqlSqLiteDatabase = new DataBaseProject(context).getWritableDatabase();
     }
 
-    public long insert(Nota nota) {
-        ContentValues cv = new ContentValues();
-        cv.put(DataBaseProject.COLUMNS_NOTAS[1], nota.getTitulo());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[2], nota.getDescripcion());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[3], nota.getTipo());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[4], nota.getFechaCreacion());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[5], nota.getFechaRecordatorio());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[6], nota.getEstado());
-        return _sqlSqLiteDatabase.insert(DataBaseProject.TABLE_NAME_NOTAS, null, cv);
+    public long Insert(Nota nota) {
+        ContentValues cnt = new ContentValues();
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[0], nota.getTitulo());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[1], nota.getDescripcion());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[2], nota.getTipo());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[3], nota.getFechaCreacion());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[4], nota.getFechaRecordatorio());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[5], nota.getEstado());
+
+        return _sqlSqLiteDatabase.insert(DataBaseProject.TABLE_NAME_NOTAS, null, cnt);
     }
 
-    public int update(Nota nota) {
-        ContentValues cv = new ContentValues();
-        cv.put(DataBaseProject.COLUMNS_NOTAS[1], nota.getTitulo());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[2], nota.getDescripcion());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[3], nota.getTipo());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[4], nota.getFechaCreacion());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[5], nota.getFechaRecordatorio());
-        cv.put(DataBaseProject.COLUMNS_NOTAS[6], nota.getEstado());
-
-        String idObjetivo = "_idNota = ?";
-        String[] argumentosParaActualizar = {String.valueOf(nota.getIdNota())};
-        return _sqlSqLiteDatabase.update(DataBaseProject.TABLE_NAME_NOTAS, cv, idObjetivo, argumentosParaActualizar);
+    public ArrayList<Nota> SeleccionarTodos() {
+        ArrayList<Nota> lista = new ArrayList<Nota>();
+        Cursor c = _sqlSqLiteDatabase.query(DataBaseProject.TABLE_NAME_NOTAS, DataBaseProject.COLUMNS_NOTAS, null, null, null, null, null);
+        while (c.moveToNext()) {
+            lista.add(new Nota(c.getString(0), c.getString(1), c.getString(2), c.getString(3)
+                    , c.getString(4), c.getString(5)));
+        }
+        return lista;
     }
 
-    public int delete(Nota nota) {
-        String[] argumentosParaEliminar = {String.valueOf(nota.getIdNota())};
-        return _sqlSqLiteDatabase.delete(DataBaseProject.TABLE_NAME_NOTAS, "_idNota = ?", argumentosParaEliminar);
+    public ArrayList<Nota> SeleccionarTodos(String titulo) {
+        ArrayList<Nota> lista = new ArrayList<Nota>();
+        Cursor c = _sqlSqLiteDatabase.query(DataBaseProject.TABLE_NAME_NOTAS, DataBaseProject.COLUMNS_NOTAS, "titulo like '%" + titulo + "%'", null, null, null, null);
+        while (c.moveToNext()) {
+            lista.add(new Nota(c.getString(0), c.getString(1), c.getString(2), c.getString(3)
+                    , c.getString(4), c.getString(5)));
+        }
+        return lista;
     }
 
-    public Cursor filter(String inputText, String filterColumn) throws SQLException {
-        Cursor row = null;
-        String query = "SELECT * FROM " + DataBaseProject.TABLE_NAME_NOTAS;
-        if (inputText == null || inputText.length() == 0) {
-            row = _sqlSqLiteDatabase.rawQuery(query, null);
+    public Nota seleccionarFicha(String titulo) {
+        Cursor c = _sqlSqLiteDatabase.query(DataBaseProject.TABLE_NAME_NOTAS, DataBaseProject.COLUMNS_NOTAS, DataBaseProject.COLUMNS_NOTAS[0] + "=?", new String[]{titulo}, null, null, null);
+        Nota fi = null;
+        while (c.moveToNext()) {
+            fi = new Nota(c.getString(0), c.getString(1), c.getString(2), c.getString(3)
+                    , c.getString(4), c.getString(5));
+        }
+        return fi;
+    }
+
+    public boolean eliminar(Nota nota) {
+        int no = _sqlSqLiteDatabase.delete(DataBaseProject.TABLE_NAME_ARCHIVOS, DataBaseProject.COLUMNS_ARCHIVOS[4] + "=?", new String[]{nota.getTitulo()});
+        if (no > 0) {
+            int no1 = _sqlSqLiteDatabase.delete(DataBaseProject.TABLE_NAME_NOTAS, DataBaseProject.COLUMNS_NOTAS[0] + "=?", new String[]{nota.getTitulo()});
+            if (no1 > 0) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            query = "SELECT * FROM " + DataBaseProject.TABLE_NAME_NOTAS +
-                    " WHERE " + filterColumn + " like '%" + inputText + "%'";
-            row = _sqlSqLiteDatabase.rawQuery(query, null);
+            return false;
         }
-        if (row != null) {
-            row.moveToFirst();
-        }
-        return row;
     }
 
-    public List<Nota> getAll() {
-        List<Nota> lst = null;
-        Cursor c = _sqlSqLiteDatabase.query(DataBaseProject.TABLE_NAME_NOTAS,
-                DataBaseProject.COLUMNS_NOTAS,
-                null, null, null, null, null);
-        if (c.moveToFirst()) {
-            lst = new ArrayList<Nota>();
-            do {
-                Nota ctc = new Nota(
-                        c.getInt(0),
-                        c.getString(1),
-                        c.getString(2),
-                        c.getString(3),
-                        c.getString(4),
-                        c.getString(5),
-                        c.getString(6));
-                lst.add(ctc);
-            } while (c.moveToNext());
+    public boolean actualizar(Nota nota) {
+        ContentValues cnt = new ContentValues();
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[1], nota.getDescripcion());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[2], nota.getTipo());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[3], nota.getFechaCreacion());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[4], nota.getFechaRecordatorio());
+        cnt.put(DataBaseProject.COLUMNS_NOTAS[5], nota.getEstado());
+        long no = _sqlSqLiteDatabase.update(DataBaseProject.TABLE_NAME_NOTAS, cnt, DataBaseProject.COLUMNS_NOTAS[0] + "=?", new String[]{nota.getTitulo()});
+        if (no > 0) {
+            return true;
+        } else {
+            return false;
         }
-        return lst;
-    }
-
-    public Cursor getAllCursor() {
-        Cursor c = _sqlSqLiteDatabase.query(DataBaseProject.TABLE_NAME_NOTAS,
-                DataBaseProject.COLUMNS_NOTAS,
-                null, null, null, null, null);
-        return c;
     }
 }

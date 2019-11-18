@@ -1,21 +1,12 @@
 package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 public class Nota {
-    int idNota;
     String titulo;
     String descripcion;
     String tipo;
     String fechaCreacion;
     String fechaRecordatorio;
     String estado;
-
-    public int getIdNota() {
-        return idNota;
-    }
-
-    public void setIdNota(int idNota) {
-        this.idNota = idNota;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -65,9 +56,8 @@ public class Nota {
         this.estado = estado;
     }
 
-    public Nota(int idNota, String titulo, String descripcion, String tipo, String fechaCreacion,
+    public Nota(String titulo, String descripcion, String tipo, String fechaCreacion,
                 String fechaRecordatorio, String estado) {
-        this.idNota = idNota;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.tipo = tipo;

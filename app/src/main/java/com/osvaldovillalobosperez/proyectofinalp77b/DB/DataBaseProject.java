@@ -9,9 +9,8 @@ import androidx.annotation.Nullable;
 public class DataBaseProject extends SQLiteOpenHelper {
     /*Script para Notas*/
     final private String SCRIPT_TABLE_NOTAS = "CREATE TABLE notas (" +
-            "_idNota            INTEGER     PRIMARY KEY     AUTOINCREMENT   NOT NULL," +
-            "titulo             TEXT        NOT NULL," +
-            "descripcion        TEXT        NOT    NULL," +
+            "titulo             TEXT        PRIMARY KEY     NOT NULL," +
+            "descripcion        TEXT        NOT NULL," +
             "tipo               TEXT        NOT NULL," +
             "fechaCreacion      TEXT        NOT NULL," +
             "fechaRecordatorio  TEXT        NOT NULL," +
