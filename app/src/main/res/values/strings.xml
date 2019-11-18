@@ -3,4 +3,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="modificar">Modificar</string>
+    <string name="ver">Ver</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="marcar">Marcar</string>
+    <string name="audio">Audio</string>
+    <string name="video">Video</string>
+    <string name="foto">Foto</string>
+    <string name="archivo">Archivo</string>
 </resources>

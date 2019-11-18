@@ -1,5 +1,7 @@
 package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
+import java.util.Calendar;
+
 public class Recordatorio {
     int idRecordatorio;
     int dia;
@@ -77,5 +79,18 @@ public class Recordatorio {
 
     public Recordatorio() {
 
+    }
+
+    public long milis() {
+        Calendar fechaActual = Calendar.getInstance();
+        long millis = 0;
+        int hora = fechaActual.get(Calendar.HOUR);
+        int minute = fechaActual.get(Calendar.MINUTE);
+        int year = fechaActual.get(Calendar.YEAR);
+        int month = fechaActual.get(Calendar.MONTH);
+        int day = fechaActual.get(Calendar.DAY_OF_MONTH);
+        millis += Math.abs(this.hora - hora);
+        millis += Math.abs(this.minuto - minute) * 60 * 1000;
+        return millis;
     }
 }

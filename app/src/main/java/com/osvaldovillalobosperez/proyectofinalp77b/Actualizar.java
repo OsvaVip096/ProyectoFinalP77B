@@ -157,7 +157,6 @@ public class Actualizar extends AppCompatActivity {
 
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
                 Intent intent = new Intent(getApplicationContext(), PlanificarAlarma.class);
-                //.putExtra("titulo", titulo.getText().toString());
                 PendingIntent pi = PendingIntent.getBroadcast(getApplicationContext(), 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                 Toast.makeText(getApplicationContext(), "s" + recordatorio.milis(), Toast.LENGTH_LONG).show();
                 alarmManager.set(AlarmManager.RTC_WAKEUP, 30000, pi);
@@ -168,11 +167,9 @@ public class Actualizar extends AppCompatActivity {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                //recordatorio.setText(dayOfMonth+"-"+month+"-"+year);
                 recordatorio.setMes(month);
                 recordatorio.setAnio(year);
                 recordatorio.setDia(dayOfMonth);
-
             }
         }, fechaActual.get(Calendar.YEAR), fechaActual.get(Calendar.MONTH), fechaActual.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
