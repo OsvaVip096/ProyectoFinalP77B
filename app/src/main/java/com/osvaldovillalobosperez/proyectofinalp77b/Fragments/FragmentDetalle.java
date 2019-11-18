@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.osvaldovillalobosperez.proyectofinalp77b.Archivo;
+import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.Archivo;
 import com.osvaldovillalobosperez.proyectofinalp77b.R;
 
 public class FragmentDetalle extends Fragment {

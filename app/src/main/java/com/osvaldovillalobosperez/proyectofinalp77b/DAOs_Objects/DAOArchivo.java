@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.osvaldovillalobosperez.proyectofinalp77b.Archivo;
 import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
 
 import java.util.ArrayList;

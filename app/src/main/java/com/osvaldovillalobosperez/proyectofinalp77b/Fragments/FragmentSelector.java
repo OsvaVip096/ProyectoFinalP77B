@@ -13,8 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.osvaldovillalobosperez.proyectofinalp77b.Archivo;
-import com.osvaldovillalobosperez.proyectofinalp77b.ArchivoAdapter;
+import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.Archivo;
+import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.ArchivoAdapter;
 import com.osvaldovillalobosperez.proyectofinalp77b.R;
 
 import java.util.ArrayList;

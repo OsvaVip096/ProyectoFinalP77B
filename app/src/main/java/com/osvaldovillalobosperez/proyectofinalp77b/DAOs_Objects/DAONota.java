@@ -7,7 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
-import com.osvaldovillalobosperez.proyectofinalp77b.Nota;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.osvaldovillalobosperez.proyectofinalp77b.R;
 
 import java.util.ArrayList;
 

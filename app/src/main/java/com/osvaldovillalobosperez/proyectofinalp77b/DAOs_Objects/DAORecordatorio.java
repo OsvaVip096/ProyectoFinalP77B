@@ -5,11 +5,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.osvaldovillalobosperez.proyectofinalp77b.DB.DataBaseProject;
-import com.osvaldovillalobosperez.proyectofinalp77b.Nota;
 
-public class DAONotas {
+public class DAORecordatorio {
     private SQLiteDatabase db;
-    public DAONotas(Context context){
+    public DAORecordatorio(Context context){
         this.db = new DataBaseProject(context).getWritableDatabase();
     }
 

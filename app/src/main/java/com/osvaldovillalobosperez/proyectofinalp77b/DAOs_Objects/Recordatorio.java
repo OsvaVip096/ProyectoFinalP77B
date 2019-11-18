@@ -1,4 +1,4 @@
-package com.osvaldovillalobosperez.proyectofinalp77b;
+package com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects;
 
 public class Recordatorio {
     int idRecordatorio;
