@@ -124,7 +124,7 @@ public class Agregar extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "s" + recordatorios.get(i).milis(), Toast.LENGTH_LONG).show();
                         }
                     }
-                    Intent intent = new Intent(getApplicationContext(), Principal.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
             }
