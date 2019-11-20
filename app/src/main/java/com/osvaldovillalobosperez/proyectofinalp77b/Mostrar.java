@@ -13,8 +13,10 @@ import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.ArchivoAdapter;
 import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.DAOArchivo;
 import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.DAONota;
 import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.Nota;
+import com.osvaldovillalobosperez.proyectofinalp77b.Fragments.FragmentAudio;
 import com.osvaldovillalobosperez.proyectofinalp77b.Fragments.FragmentDetalle;
 import com.osvaldovillalobosperez.proyectofinalp77b.Fragments.FragmentSelector;
+import com.osvaldovillalobosperez.proyectofinalp77b.Fragments.FragmentVideo;
 
 import java.util.ArrayList;
 

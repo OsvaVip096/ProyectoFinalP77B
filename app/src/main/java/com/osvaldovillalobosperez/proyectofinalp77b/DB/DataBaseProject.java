@@ -17,7 +17,6 @@ public class DataBaseProject extends SQLiteOpenHelper {
             "estado             TEXT        NOT NULL);";
 
     public static final String[] COLUMNS_NOTAS = {
-            "_idNota",
             "titulo",
             "descripcion",
             "tipo",
