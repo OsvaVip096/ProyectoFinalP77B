@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <!--tools:context=".actualizar"
-     -->
+    android:layout_height="match_parent"
+    tools:context=".Actualizar">
 
-
-<ScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -117,12 +115,10 @@
                 android:onClick="btnArchivosAOnClick"
                 android:text="Archivos" />
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcclcArchivoListaA"
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
-
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="300dp" />
 
             <Button
                 android:id="@+id/btnGuardarA"
