@@ -3,10 +3,10 @@
 
     <item
         android:id="@+id/itmAgregar"
-        android:title="itmAgregar"></item>
+        android:title="@string/agregar"></item>
 
     <item
         android:id="@+id/itmAcercaDe"
-        android:title="itmAcercaDe"></item>
+        android:title="@string/acercade"></item>
 
 </menu>

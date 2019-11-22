@@ -11,4 +11,20 @@
     <string name="video">Video</string>
     <string name="foto">Foto</string>
     <string name="archivo">Archivo</string>
+
+    <string name="buscar">Buscar</string>
+
+    <string name="t_tulo">Título</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="tarea">Tarea</string>
+    <string name="nota">Nota</string>
+    <string name="terminaci_n">Terminación</string>
+    <string name="agregar_recordatorio">Agregar recordatorio</string>
+    <string name="ver_recordatorios">Ver recordatorios</string>
+    <string name="archivos">Archivos</string>
+    <string name="guardar">Guardar</string>
+    <string name="acercade">AcercaDe</string>
+    <string name="agregar">Agregar</string>
+
+
 </resources>

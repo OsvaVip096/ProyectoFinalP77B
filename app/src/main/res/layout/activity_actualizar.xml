@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/t_tulo"
                 android:textAlignment="center" />
 
             <EditText
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción"
+                android:text="@string/descripci_n"
                 android:textAlignment="center" />
 
             <EditText
@@ -51,13 +51,13 @@
                     android:id="@+id/rdTareaA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdTarea" />
+                    android:text="@string/tarea" />
 
                 <RadioButton
                     android:id="@+id/rdNotaA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdNota" />
+                    android:text="@string/nota" />
             </RadioGroup>
 
             <LinearLayout
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="setTerminar"
-                    android:text="Terminación" />
+                    android:text="@string/terminaci_n" />
 
                 <TextView
                     android:id="@+id/lblRecordatorioA"
@@ -83,17 +83,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="addRecordatorio"
-                    android:text="Agregar recordatorio" />
+                    android:text="@string/agregar_recordatorio" />
 
                 <Button
                     android:id="@+id/btnVerRecordatoriosAA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="btnVerRecordatoriosAA"
-                    android:text="Ver recordatorios"
+                    android:text="@string/ver_recordatorios"
 
                     />
-
             </LinearLayout>
 
             <LinearLayout
@@ -103,9 +102,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Archivos"
+                    android:text="@string/archivos"
                     android:textAlignment="center" />
-
             </LinearLayout>
 
             <Button
@@ -113,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnArchivosAOnClick"
-                android:text="Archivos" />
+                android:text="@string/archivos" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcclcArchivoListaA"
@@ -125,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnGuardarAOnClick"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
         </LinearLayout>
 
     </ScrollView>

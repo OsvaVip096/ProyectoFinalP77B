@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/t_tulo"
                 android:textAlignment="center" />
 
             <EditText
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción"
+                android:text="@string/descripci_n"
                 android:textAlignment="center" />
 
             <EditText
@@ -51,13 +51,13 @@
                     android:id="@+id/rdTarea"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdTarea" />
+                    android:text="@string/tarea" />
 
                 <RadioButton
                     android:id="@+id/rdNota"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdNota" />
+                    android:text="@string/nota" />
             </RadioGroup>
 
             <LinearLayout
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="btnAgregarAlarmaOnClick"
-                    android:text="Terminación" />
+                    android:text="@string/terminaci_n" />
 
                 <TextView
                     android:id="@+id/lblRecordatorio"
@@ -83,14 +83,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="AgregarRecordatorio"
-                    android:text="Agregar recordatorio" />
+                    android:text="@string/agregar_recordatorio" />
 
                 <Button
                     android:id="@+id/btnVerRecordatorios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="MostarRecordatorios"
-                    android:text="Ver recordatorios" />
+                    android:text="@string/ver_recordatorios" />
 
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Archivos"
+                    android:text="@string/archivos"
                     android:textAlignment="center" />
 
             </LinearLayout>
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnArchivosOnClick"
-                android:text="Archivos" />
+                android:text="@string/archivos" />
 
             <ImageView
                 android:id="@+id/Imagen"
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnGuardarOnClick"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
         </LinearLayout>
 
     </ScrollView>

@@ -18,16 +18,16 @@
 
             <EditText
                 android:id="@+id/txtBuscar"
-                android:layout_width="300dp"
+                android:layout_width="199dp"
                 android:layout_height="wrap_content"
-                android:hint="Buscar" />
+                android:hint="@string/buscar" />
 
             <Button
                 android:id="@+id/btnBuscar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="btnBuscar"
-                android:text="Buscar" />
+                android:text="@string/buscar" />
 
         </LinearLayout>
 
@@ -35,7 +35,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/rcclrFicha"/>
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

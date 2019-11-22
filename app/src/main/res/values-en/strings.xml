@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProyectoFinalP77B</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="modificar">Update</string>
+    <string name="ver">Watch</string>
+    <string name="eliminar">Delete</string>
+    <string name="marcar">Check</string>
+    <string name="audio">Audio</string>
+    <string name="video">Video</string>
+    <string name="foto">photo</string>
+    <string name="archivo">File</string>
+
+    <string name="buscar">Search</string>
+
+    <string name="t_tulo">Títle</string>
+    <string name="descripci_n">Description</string>
+    <string name="tarea">Homeword</string>
+    <string name="nota">Note</string>
+    <string name="terminaci_n">Finish</string>
+    <string name="agregar_recordatorio">Add Reminder</string>
+    <string name="ver_recordatorios">See reminder</string>
+    <string name="archivos">Files</string>
+
+    <string name="guardar">Safe</string>
+    <string name="acercade">About...</string>
+    <string name="agregar">Add</string>
+
+</resources>

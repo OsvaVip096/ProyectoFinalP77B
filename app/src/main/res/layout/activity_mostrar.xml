@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Título"
+                android:text="@string/t_tulo"
                 android:textAlignment="center" />
 
             <TextView
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripción"
+                android:text="@string/descripci_n"
                 android:textAlignment="center" />
 
             <TextView
@@ -50,13 +50,13 @@
                     android:id="@+id/rdTareaM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdTarea" />
+                    android:text="@string/tarea" />
 
                 <RadioButton
                     android:id="@+id/rdNotaM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="rdNota" />
+                    android:text="@string/nota" />
             </RadioGroup>
 
             <LinearLayout
@@ -79,7 +79,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Archivos"
+                    android:text="@string/archivos"
                     android:textAlignment="center" />
 
             </LinearLayout>
