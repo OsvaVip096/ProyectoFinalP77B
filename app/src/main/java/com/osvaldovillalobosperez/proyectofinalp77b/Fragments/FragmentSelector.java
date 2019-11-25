@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.Archivo;
 import com.osvaldovillalobosperez.proyectofinalp77b.DAOs_Objects.ArchivoAdapter;
+import com.osvaldovillalobosperez.proyectofinalp77b.Mostrar;
 import com.osvaldovillalobosperez.proyectofinalp77b.R;
 
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public class FragmentSelector extends Fragment {
                 int no=recyclerView.getChildAdapterPosition(v);
                 Archivo ar=lista.get(no);
 
-                //((mostrar)activity).mostrarDetalle(ar);
+                ((Mostrar)activity).mostrarDetalle(ar);
                 return true;
             }
         });
