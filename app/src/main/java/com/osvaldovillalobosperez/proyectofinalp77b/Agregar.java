@@ -1,11 +1,14 @@
 package com.osvaldovillalobosperez.proyectofinalp77b;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,8 +23,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -78,6 +84,8 @@ public class Agregar extends AppCompatActivity {
                 }
             }
         });
+
+        this.checkPermissionExternalStorage(this);
     }
 
     public void btnAgregarAlarmaOnClick(View v) {
@@ -187,7 +195,7 @@ public class Agregar extends AppCompatActivity {
 
     public void btnArchivosOnClick(View v) {
         final View vista = v;
-        AlertDialog.Builder menu = new AlertDialog.Builder(v.getContext());
+        final AlertDialog.Builder menu = new AlertDialog.Builder(v.getContext());
         Resources res = getResources();
         CharSequence[] opciones = {res.getString(R.string.audio), res.getString(R.string.video), res.getString(R.string.foto), res.getString(R.string.archivo)};
         menu.setItems(opciones, new DialogInterface.OnClickListener() {
@@ -253,13 +261,15 @@ public class Agregar extends AppCompatActivity {
     }
 
     public void TomarImagen() {
-        Intent camaraFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        /*Intent camaraFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         Long consecutivo = System.currentTimeMillis() / 1000;
         String nombre = consecutivo.toString() + ".png";
         File foto = new File(getExternalFilesDir(null), nombre);
         camaraFoto.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(foto));
         uri = Uri.fromFile(foto);
-        startActivityForResult(camaraFoto, 1);
+        startActivityForResult(camaraFoto, 1);*/
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 1);
     }
 
     public void tomarVideo() {
@@ -314,5 +324,167 @@ public class Agregar extends AppCompatActivity {
             }
         }, fechaActual.get(Calendar.YEAR), fechaActual.get(Calendar.MONTH), fechaActual.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.show();
+    }
+
+
+    public void checkPermissionExternalStorage(Activity thisActivity) {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(thisActivity,
+                Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,
+                    Manifest.permission.RECORD_AUDIO)) {
+
+                // Show an expanation to the user *asynchronous
+                // ly* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                Toast.makeText(this, "No hay permiso de grabar audio", Toast.LENGTH_SHORT).show();
+
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(thisActivity,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.RECORD_AUDIO},
+                        1001);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } else {
+            //doThings();
+        }
+
+        if (ContextCompat.checkSelfPermission(thisActivity,
+                Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,
+                    Manifest.permission.CAMERA)) {
+
+                // Show an expanation to the user *asynchronous
+                // ly* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                Toast.makeText(this, "No hay permiso de tomar foto o vídeo", Toast.LENGTH_SHORT).show();
+
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(thisActivity,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.CAMERA},
+                        1002);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } else {
+            //doThings();
+        }
+
+        if (ContextCompat.checkSelfPermission(thisActivity,
+                Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(thisActivity,
+                    Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+                // Show an expanation to the user *asynchronous
+                // ly* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                Toast.makeText(this, "No hay permiso de leer archivos de memoria externa", Toast.LENGTH_SHORT).show();
+
+
+            } else {
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(thisActivity,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE},
+                        1003);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } else {
+            //doThings();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1001: {
+                //premission to read storage
+                if (grantResults.length > 0
+                        && (grantResults[0] == PackageManager.PERMISSION_GRANTED || grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    //doThings();
+                    Toast.makeText(this, "YA PUEDE GRABAR AUDIO, PERMISO CONCEDIDO	", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "NECESITA PERMISOS DE AUDIO", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+            case 1002: {
+                //premission to read storage
+                if (grantResults.length > 0
+                        && (grantResults[0] == PackageManager.PERMISSION_GRANTED || grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    //doThings();
+                    Toast.makeText(this, "YA PUEDE TOMAR FOTO Y VÍDEO, PERMISO CONCEDIDO	", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "NECESITA PERMISO DE CAMARA", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+            case 1003: {
+                //premission to read storage
+                if (grantResults.length > 0
+                        && (grantResults[0] == PackageManager.PERMISSION_GRANTED || grantResults[1] == PackageManager.PERMISSION_GRANTED)) {
+
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    //doThings();
+                    Toast.makeText(this, "YA PUEDE LEER DESDE ALMACENAMIENTO EXTERNO, PERMISO CONCEDIDO	", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    Toast.makeText(this, "NECESITA PERMISO DE ALMACENAMIENTO EXTERNO", Toast.LENGTH_SHORT).show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
     }
 }
