@@ -278,14 +278,8 @@ public class Actualizar extends AppCompatActivity {
     }
 
     public void TomarImagen() {
-        //uri=null;
-        Intent camaraFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        Long consecutivo = System.currentTimeMillis() / 1000;
-        String nombre = consecutivo.toString() + ".png";
-        File foto = new File(getExternalFilesDir(null), nombre);
-        camaraFoto.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(foto));
-        uri = Uri.fromFile(foto);
-        startActivityForResult(camaraFoto, 1);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 1);
     }
 
     public void tomarVideo() {

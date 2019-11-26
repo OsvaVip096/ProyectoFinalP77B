@@ -38,27 +38,28 @@ public class FragmentSelector extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if(context instanceof Activity){
-            this.activity=(Activity)context;
+        if (context instanceof Activity) {
+            this.activity = (Activity) context;
         }
 
     }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View vista=inflater.inflate(R.layout.fragment_selector,container,false);
-        recyclerView=(RecyclerView)vista.findViewById(R.id.rcclrArchivoFragment);
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(activity);
+        View vista = inflater.inflate(R.layout.fragment_selector, container, false);
+        recyclerView = vista.findViewById(R.id.rcclrArchivoFragment);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(activity);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
         adapter.setOnItemLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                int no=recyclerView.getChildAdapterPosition(v);
-                Archivo ar=lista.get(no);
+                int no = recyclerView.getChildAdapterPosition(v);
+                Archivo ar = lista.get(no);
 
-                ((Mostrar)activity).mostrarDetalle(ar);
+                ((Mostrar) activity).mostrarDetalle(ar);
                 return true;
             }
         });

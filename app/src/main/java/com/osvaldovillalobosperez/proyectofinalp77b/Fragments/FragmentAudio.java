@@ -21,15 +21,15 @@ public class FragmentAudio extends Fragment {
     private Archivo archivo;
     private Button btnReproducir;
     private Button btnPausar;
-    private MediaPlayer mediaPlayer=new MediaPlayer();
+    private MediaPlayer mediaPlayer = new MediaPlayer();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View vista=inflater.inflate(R.layout.fragment_audio,container,false);
-        btnReproducir=(Button)vista.findViewById(R.id.btnReproducirAudio);
-        btnPausar=(Button)vista.findViewById(R.id.btnPausarAudio);
-        Uri uri=Uri.parse(archivo.getRuta());
+        View vista = inflater.inflate(R.layout.fragment_audio, container, false);
+        btnReproducir = (Button) vista.findViewById(R.id.btnReproducirAudio);
+        btnPausar = (Button) vista.findViewById(R.id.btnPausarAudio);
+        Uri uri = Uri.parse(archivo.getRuta());
         try {
-            mediaPlayer.setDataSource(getContext(),uri);
+            mediaPlayer.setDataSource(getContext(), uri);
             mediaPlayer.prepare();
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,6 +49,7 @@ public class FragmentAudio extends Fragment {
         });
         return vista;
     }
+
     public void setArchivo(Archivo archivo) {
         this.archivo = archivo;
     }
