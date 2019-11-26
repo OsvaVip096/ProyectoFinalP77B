@@ -15,6 +15,7 @@
 
     <string name="buscar">Search</string>
     <string name="buscar_w600dp">Search_w600dp</string>
+    <string name="buscar_w500dp">Search_w500dp</string>
 
     <string name="t_tulo">Títle</string>
     <string name="descripci_n">Description</string>
@@ -30,4 +31,5 @@
     <string name="agregar">Add</string>
 
     <string name="pantalla">Screen_w600dp</string>
+    <string name="pantalla_500">Screen_w500dp</string>
 </resources>
