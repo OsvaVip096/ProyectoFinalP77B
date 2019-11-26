@@ -13,6 +13,7 @@
     <string name="archivo">Archivo</string>
 
     <string name="buscar">Buscar</string>
+    <string name="buscar_w600dp">Buscar_w600dp</string>
 
     <string name="t_tulo">Título</string>
     <string name="descripci_n">Descripción</string>
@@ -26,5 +27,6 @@
     <string name="acercade">AcercaDe</string>
     <string name="agregar">Agregar</string>
 
+    <string name="pantalla">Pantalla_w600dp</string>
 
 </resources>
